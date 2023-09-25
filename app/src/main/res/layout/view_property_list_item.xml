@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{() -> viewModel.onPropertyItemClicked(property)}"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                loadImage="@{property.url}"
+                placeholder="@{@drawable/ic_launcher_background}"
+                android:layout_width="@dimen/property_list_item_image"
+                android:layout_height="@dimen/property_list_item_image"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="@{String.format(@string/city_text_and_label, property.city)}"
+                app:layout_constraintStart_toEndOf="@id/imageView"
+                app:layout_constraintTop_toTopOf="@id/imageView"
+                tools:text="@string/city_text_and_label" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text="@{String.format(@string/price_text_and_label, property.price)}"
+                app:layout_constraintStart_toEndOf="@id/imageView"
+                app:layout_constraintTop_toBottomOf="@id/tv_city"
+                tools:text="@string/price_text_and_label" />
+
+            <TextView
+                android:id="@+id/tv_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text="@{String.format(@string/area_text_and_label, property.area)}"
+                app:layout_constraintStart_toEndOf="@id/imageView"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                tools:text="@string/area_text_and_label" />
+
+            <TextView
+                android:id="@+id/tv_bedroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text="@{String.format(@string/bedroom_text_and_label, property.bedrooms)}"
+                app:layout_constraintStart_toEndOf="@id/imageView"
+                app:layout_constraintTop_toBottomOf="@id/tv_area"
+                tools:text="@string/bedroom_text_and_label" />
+
+            <TextView
+                android:id="@+id/tv_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text="@{String.format(@string/room_text_and_label, property.rooms)}"
+                app:layout_constraintStart_toEndOf="@id/imageView"
+                app:layout_constraintTop_toBottomOf="@id/tv_bedroom"
+                tools:text="@string/room_text_and_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <data>
+
+        <variable
+            name="property"
+            type="com.shahrukhamd.realestate.data.model.PropertyItem" />
+
+        <variable
+            name="viewModel"
+            type="com.shahrukhamd.realestate.ui.RealEstateViewModel" />
+
+    </data>
+
+</layout>

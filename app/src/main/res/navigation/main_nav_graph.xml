@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/realEstateListFragment">
+
+    <fragment
+        android:id="@+id/realEstateListFragment"
+        android:name="com.shahrukhamd.realestate.ui.list.RealEstateListFragment"
+        android:label="RealEstateListFragment">
+
+        <action
+            android:id="@+id/action_listFragment_to_detailsFragment"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:destination="@id/realEstateDetailsFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/realEstateDetailsFragment"
+        android:name="com.shahrukhamd.realestate.ui.details.RealEstateDetails"
+        android:label="RealEstateDetailsFragment">
+
+        <argument
+            android:name="property"
+            app:argType="com.shahrukhamd.realestate.data.model.PropertyItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+    </fragment>
+
+</navigation>

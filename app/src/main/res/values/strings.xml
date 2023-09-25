@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Real Estate</string>
+    <string name="city_text_and_label">City: %s</string>
+    <string name="price_text_and_label">Price: %s</string>
+    <string name="area_text_and_label">Area: %s</string>
+    <string name="bedroom_text_and_label">Bedrooms: %s</string>
+    <string name="room_text_and_label">Rooms: %s</string>
+    <string name="property_type_text_and_label">Property type: %s</string>
+</resources>
